@@ -133,6 +133,76 @@ const array1 = ['A', 'C', 'H'];
 const array2 = ['B', 'M'];
 arrays(array1, array2)
 
+//13 
+function sortireba(array){
+    let newArray = array.sort();
+    console.log(newArray);
+}
+let array = ['a', 'j', 'b', 'm'];
+sortireba(array)
+
+// 14
+function sortireba(array1, array2){
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+            if (array1[i] === array2[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+let arrays = ['a', 'j', 'b', 'm'];
+let arrayss = ['b', 'j', 'f', 'm'];
+
+console.log(sortireba(arrays, arrayss));
+
+
+// 15
+const car = new Object();
+car.mark = 'Mclaren';
+car.year = 1999;
+car.model = 'rame'
+console.log(car)
+
+// 16 
+const car = new Object();
+car.mark = 'Mclaren';
+car.year = 1999;
+car.model = 'rame'
+car.start = function() {
+    console.log('The car is starting...');
+};
+car.start();
+
+// 17
+const person = new Object();
+person.firstName = "JJ";
+person.lastName = "M";
+person.age = 50;
+person.eyeColor = "blue";
+console.log(person.firstName)
+
+// 18 aq rogor vqna ise rom job-c daabrunos? an anonimjrs rato abrunebs?
+// Create an Object
+const person = new Object();
+person.firstName = "JJ";
+person.lastName = "M";
+person.age = 50;
+person.eyeColor = "blue";
+person.job = function(){
+    return 'manager'
+}
+console.log(person)
+
+
+
+
+
+
+
+
+
 
 
 
