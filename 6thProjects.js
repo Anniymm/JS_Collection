@@ -154,7 +154,6 @@ main();
 
 // 27
 function emojiize() {
-    // Mapping of emoji aliases to actual emojis
     const emojis = {
         ":thumbsup:": "👍",
         ":smile:": "😄",
