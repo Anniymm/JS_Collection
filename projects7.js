@@ -111,6 +111,60 @@ for(let object in person1){
 }
 
 // 10
+let names = ['ani', 'mariami', 'nika', 'giorgi', 'ani', 'mari'];
+let counts = {};
+names.forEach(function(name) {
+    counts[name] = (counts[name] || 0) + 1;
+});
+
+console.log(counts);
+
+// 11 ar vici es amas mekitxeba tu ara
+
+function Product(){
+    let product1 = {name: 'p1', price: 12};
+    this.getPrice=function(){
+        console.log(product1['price'])
+    }
+}
+let product = new Product();
+product.getPrice(); // es fasi rom dabewdos
+
+let arr = [];
+let sum = 0;
+
+function Basket(name, price) {
+    this.name = name;
+    this.price = price;
+    arr.push(this);
+}
+
+function calculateTotalPrice() {
+    sum = arr.reduce((total, item) => total + item.price, 0);
+    console.log('Total Price:', sum);
+}
+
+let item1 = new Basket('item1', 1.5);
+let item2 = new Basket('item2', 1);
+let item3 = new Basket('item3', 2.0);
+
+calculateTotalPrice(); 
+
+// 12 logika: jsodan vaqciot
+
+obj1 = { a: 1, b: { c: 2 } } ;
+obj2 = { a: 1, b: { c: 5 } };
+
+function compare(obj1, obj2){
+     return JSON.stringify(obj1) === JSON.stringify(obj2) 
+}
+console.log(compare(obj1, obj2));
+
+// 13
+
+
+
+
 
 
 
