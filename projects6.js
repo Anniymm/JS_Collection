@@ -219,6 +219,9 @@ function isPangram() {
 console.log(isPangram());
 
 
+// 23
+// amaze cota unda davfiqrde
+
 // 24 es ar vici amas mekitxeba tu ara
 
 function removeFalseValues(arr) {
