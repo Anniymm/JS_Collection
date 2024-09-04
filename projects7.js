@@ -161,6 +161,32 @@ function compare(obj1, obj2){
 console.log(compare(obj1, obj2));
 
 // 13
+let arr = [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }];
+function getArray(arr){
+    let ids = [];
+    for(let i=0; i<arr.length; i++){
+        ids.push(arr[i].id)
+        ids.push(arr[i].name)
+    }
+    return ids;
+}
+
+function convert(){
+    let arrayy = getArray(arr);
+    let obj = {};
+    for (let i = 0; i < arrayy.length; i += 2) {
+        obj[arrayy[i]] = arrayy[i + 1];
+    }
+    return obj;
+}
+console.log(convert());
+
+// 14  unda davfiqrde. JSON.stringify aqcevs magram ""-eseni saidan gavachino ver mivxvdi )))
+
+// 15 amasac vtoveb, mere minda rom vcado.
+// p.s pasuxi arc ertze ar minda rasac vtoveb, logikas ver vxvdebi da minda rom vifiqro
+
+
 
 
 
