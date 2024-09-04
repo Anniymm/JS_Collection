@@ -84,9 +84,52 @@ function calculate(){
 }
 calculate()
 
-// 22 es gavige,magram davtove, principi igivea rac danarchenebshi
+// 22 
+function calculateSimpleInterest(principal, rate, years) {
+    return principal * (1 + (rate * years));
+}
 
-// 23 esec egre :)) funcqciebi, promptebi, calculate da formatirebuli stringi
+function main() {
+    let principal = parseFloat(prompt("Enter the principal amount:"));
+    let rate = parseFloat(prompt("Enter the annual interest rate (as a decimal):"));
+    let years = parseFloat(prompt("Enter the number of years:"));
+    // validaciebi
+    if (isNaN(principal) || principal <= 0 || isNaN(rate) || rate < 0 || isNaN(years) || years < 0) {
+        console.log("Invalid input. Please enter positive numbers for principal, rate, and years.");
+        return;
+    }
+
+    let accruedAmount = calculateSimpleInterest(principal, rate, years);
+
+    console.log(`The accrued amount (principal + interest) is: ${accruedAmount.toFixed(2)}`);
+}
+
+main();
+
+
+// 23 
+function calculateCompoundInterest(principal, rate, periodsPerYear, years) {
+    return principal * Math.pow((1 + rate / periodsPerYear), periodsPerYear * years);
+}
+
+function main() {
+    let principal = parseFloat(prompt("Enter the initial amount (principal):"));
+    let rate = parseFloat(prompt("Enter the annual interest rate (as a decimal):"));
+    let periodsPerYear = parseInt(prompt("Enter the number of times the interest is compounded per year:"), 10);
+    let years = parseFloat(prompt("Enter the number of years of investment:"));
+    // es mgoni zedmetad grdzelia
+    if (isNaN(principal) || principal <= 0 || isNaN(rate) || rate < 0 || isNaN(periodsPerYear) || periodsPerYear <= 0 || isNaN(years) || years < 0) {
+        alert("Invalid input. Please enter positive numbers for all fields.");
+        return;
+    }
+
+    let accumulatedAmount = calculateCompoundInterest(principal, rate, periodsPerYear, years);
+
+    alert(`The accumulated amount after ${years} years is: ${accumulatedAmount.toFixed(2)}`);
+}
+
+main();
+
 
 // 24 
 function def() {
