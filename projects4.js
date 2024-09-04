@@ -1,115 +1,99 @@
-// 1
-function greet(){
-    let input = prompt('enter a name ');
-    console.log(`hello, ${input}, nice to meet you!`)
+// 1 
+function sayHello(){
+    console.log('Hello, World');
 }
-greet()
+sayHello();
 
 // 2
-function quantity(){
-    let input = prompt('enter a word ');
-    console.log(`${input} has ${input.length} characters`)
+function greet(name){
+    console.log(`hello ${name}`);
 }
-quantity()
+greet('X');
 
 // 3
-function quotes(){
-    let quote = prompt('what is a quote ');
-    let author = prompt('who said that ');
-    console.log(`${author} said, that "${quote}." `)
+
+function sum(num1, num2){
+    return num1 + num2);
 }
-quotes()
+console.log(sum(1, 2));
 
 // 4
-function low(){
-    let quote = prompt('what is a quote ');
-    let lowered = quote.toLowerCase();
-    console.log(lowered)
+function calculateArea(width, length){
+    return width*length;
 }
-low()
+console.log(calculateArea(60, 2));
 
-// 5
-let inputs = prompt('enter string ');
-console.log(inputs.replace(/ /g, '...'))
-// replace-shi space unda gadavce globalurad, replaceit marto
-//ertxel anacvlebs. ise ARA rogorc PYTHON-shi da nu meshleba!
+//5 es gavige rogorc amixseni, dro rom aghar damekarga bevri droebit davtove 
+
+// 7
+function celsiusToFarenheit(celsius){
+    let formula = (celsius * 9 / 5) +32;
+    return formula;
+}
+console.log(celsiusToFarenheit(5));
 
 // 6
-let k = prompt('enter string ');
-function replacee(k){
-    let result = k.replace(':)', '🙂');
-    result = result.replace(':(', '🙁'); // aq, resultad sheinaxa da mere resulti unda chavareplaceo
-    return result;
-}
-console.log(replacee(k))
-
-// 7 araferi axali, amitom davtove.
-
-// 8 
-function level() {
-    let levell;
-    do {
-        levell = Number(prompt('Enter a level:'));
-        if (isNaN(levell)) {
-            console.log('Please enter a valid number.');
-        } else if (levell <= 0) {
-            console.log('Please enter a positive number.');
-        }
-    } while (isNaN(levell) || levell <= 0); // || OR
-    return levell;
-}
-let leveli = level();
-// console.log(leveli)
-
-function arrays(level){
-    let array = [];
-    for (let i=1; i<=level; i++){
-        array.push(i);
+function hello(quantity){
+    for(let i=1; i<=quantity; i++){
+        console.log('Hello, World')
     }
-    return array; // ricxvebis  lists daabrunebs
-} 
-let returned_array = arrays(leveli);
-// console.log(returned_array)
-
-function getRandomElement(returned_array) {
-    const randomIndex = Math.floor(Math.random() * returned_array.length);
-    const randomElement = returned_array[randomIndex];
-    return randomElement;
 }
-let number = getRandomElement(returned_array)
-// console.log(number)
+hello(5);
 
-function user_input(number){
-    let user;
-    let guessCount = 0;
-    do {
-        user = Number(prompt('Enter a number:'));
-        guessCount++;
-        if (user > number) {
-            console.log('Too high');
-            
-        } else if (user < number) {
-            console.log('Too low');
+
+// 8
+function sumDigit(number){
+    let mynumber = number.toString();
+    let sum=0;
+    for(let digit of mynumber){
+        sum = sum+parseInt(digit);
+    }
+    console.log(sum)
+}
+sumDigit(103);
+
+// 9 indexebi shevinaxe masivshi a mere masivis sigrdze davitvale
+     p.s amaze mokledac sheidzleba,magram irchevnia sxvadasxva metodebi vcado 
+
+function countBs(string){
+    let array = [];
+    for(let i=0; i<string.length; i++){
+        if(string[i] === 'B'){
+            array.push(i);
         }
-    } while (user !== number);
-    return `Right! \nyou guessed in ${guessCount} attempt!`;
-    
+    }
+    // console.log(array)
+    console.log(array.length)
 }
-console.log(user_input(number))
+countBs('BaBBllBB0B')
+
+
+// 10
+function sum(a, b){
+    let count = 0;
+    for(let i=a; i<=b; i++){
+        count+=i;
+    }
+    console.log(count)
+}
+sum(5,100)
+
+//11
+function palindrome(string){
+    let array = string.split('');
+    console.log(array)
+    let reversedArray = string.split('').reverse();
+    console.log(reversedArray)
+    for (let i=0; i<string.length; i++){
+        if (array[i] !== reversedArray[i]){
+            return false;
+        }
+        
+    }  
+    return true;  
+}
+console.log(palindrome('amnna'))
 
 
 
 
-
-
-
-
-
-
-
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/Anniymm/javascript_Algouni.git
-// git push -u origin main
