@@ -97,3 +97,63 @@ function user_input(number){
 }
 console.log(user_input(number))
 
+// 9 mgoni tan unda daetaval. demoshi cota sxvanairad iyo )
+function promptLevel() {
+    let level;
+    while (true) {
+        level = parseInt(prompt("Select a game level (1, 2, or 3):"), 10);
+        if ([1, 2, 3].includes(level)) {
+            return level;
+        } else {
+            alert("Invalid input. Please enter 1, 2, or 3.");
+        }
+    }
+}
+
+function generateProblem(level) {
+    let x, y;
+    if (level === 1) {
+        x = Math.floor(Math.random() * 10) + 1;
+        y = Math.floor(Math.random() * 10) + 1;
+    } else if (level === 2) {
+        x = Math.floor(Math.random() * 50) + 1;
+        y = Math.floor(Math.random() * 50) + 1;
+    } else if (level === 3) {
+        x = Math.floor(Math.random() * 100) + 1;
+        y = Math.floor(Math.random() * 100) + 1;
+    }
+    return { x, y, answer: x + y };
+}
+
+function main() {
+    const level = promptLevel();
+    let score = 0;
+    const totalProblems = 10;
+
+    for (let i = 0; i < totalProblems; i++) {
+        const { x, y, answer } = generateProblem(level);
+        let attempts = 0;
+        let userAnswer;
+        let correct = false;
+
+        while (attempts < 3) {
+            userAnswer = parseInt(prompt(`${x} + ${y} = `), 10);
+            if (userAnswer === answer) {
+                console.log('correct')
+                score++;
+                correct = true;
+                break;
+            } else {
+                attempts++;
+                if (attempts < 3) {
+                    console.log("EEE");
+                }
+            }
+        }
+        if (!correct) {
+            alert(`Answer ${answer}`);
+        }
+    }
+    console.log(`Your score: ${score} out of ${totalProblems}`);
+}
+main();
