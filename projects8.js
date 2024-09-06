@@ -41,3 +41,50 @@ async function someFunction() {
 }
 
 someFunction();
+
+// 5
+async function someFunction(age) {
+  if(age > 18){
+      await new Promise((funqcia) => setTimeout(funqcia, 3000)); 
+      console.log('2 wamis mere'); 
+  }else{
+      console.log('aq darejeqda')
+  }
+
+}
+someFunction(12);
+
+// 6 
+const randomPromise = () => new Promise((resolve, reject) => {
+  const randomNumber = Math.random(); // Generate a random number between 0 and 1
+
+  setTimeout(() => {
+    if (randomNumber < 0.5) {
+      resolve('Shesrulda'); // Resolve 50% of the time
+    } else {
+      reject(new Error('darejectda')); // aq ase error rom qnas 
+    }
+  }); 
+});
+randomPromise()
+  .then((message) => console.log('Success:', message))
+  .catch((error) => console.error('Error:', error.message)); // aq daiwhiros eg errori
+
+// 7
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000); 
+  
+}).then(function(result) { // (**)
+  console.log(result); // 1
+  return result * 2;
+
+}).then(function(result) { // (***)
+  console.log(result); // 2
+  return result * 2;
+
+}).then(function(result) {
+
+  console.log(result); // 4
+  return result * 2;
+
+});
