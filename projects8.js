@@ -141,3 +141,54 @@ function information(){
 }
 information()
 
+// 11
+async function fetchAndPrintInfo() {
+  const url1 = 'https://api.github.com/users/temuritsutskiridze.'; 
+  const url2 = 'https://api.github.com/users/nikaaptsiauri.'; 
+
+  try {
+      // orive rom dafetchos
+      const [response1, response2] = await Promise.all([
+          fetch(url1),
+          fetch(url2)
+      ]);
+      // shemowmena
+      if (!response1.ok || !response2.ok) {
+          throw new Error('response were not ok');
+      }
+      // jsonad vaqciot
+      const data1 = await response1.json();
+      const data2 = await response2.json();
+      console.log(data1);
+      console.log(data2);
+  } catch (error) {
+      console.error('Error during fetching data:', error);
+  }
+}
+fetchAndPrintInfo();
+
+// 12
+async function fetchFirstCompleted() {
+  const url1 = 'https://api.github.com/users/temuritsutskiridze.';
+  const url2 = 'https://api.github.com/users/Anniymm.''; 
+  const url3 = 'https://api.github.com/users/nikaaptsiauri.'; 
+
+  try {
+      const fetchPromise1 = fetch(url1);
+      const fetchPromise2 = fetch(url2);
+      const fetchPromise3 = fetch(url3);
+
+      const firstResponse = await Promise.race([
+          fetchPromise1,
+          fetchPromise2,
+          fetchPromise3
+      ]);
+
+      const data = await firstResponse.json();
+
+      console.log('First data:', data);
+  } catch (error) {
+      console.error('Error fetching data:', error);
+  }
+}
+fetchFirstCompleted();
