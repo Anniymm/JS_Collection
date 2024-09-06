@@ -33,4 +33,11 @@ function any(array, num, callback) {
 any([1, 2, 3], 4, (newarray) => console.log(newarray));
 
 
-  
+// 4
+// aq Promises gadaeca dro da funqcia 
+async function someFunction() {
+  await new Promise((funqcia) => setTimeout(funqcia, 2000)); 
+  console.log('2 wamis mere'); 
+}
+
+someFunction();
