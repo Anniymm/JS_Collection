@@ -88,3 +88,56 @@ new Promise(function(resolve, reject) {
   return result * 2;
 
 });
+
+// 8
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000); 
+  
+}).then(function(result) { 
+  console.log(result); // 1
+  return result * 2;
+
+}).then(function(result) { 
+  console.log(result); // 2
+});
+
+// 9
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+  
+}async function countUpToNumber() {
+  let userInput = Number(prompt('Please enter a positive number:'));
+  for (let i = 1; i <= userInput; i++) {
+    console.log(i);
+    await delay(1000); 
+  }
+}
+countUpToNumber();
+
+
+// 10
+function Useri(){
+    let name = prompt('Enter your username: ');
+    return name;
+}
+
+function information(){
+    let namee = Useri();
+    const url = `https://api.github.com/users/${username}`;
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); 
+      })
+      .then(data => {
+        console.log(data); 
+      })
+      .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+    
+}
+information()
+
