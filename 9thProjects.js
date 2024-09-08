@@ -117,3 +117,38 @@ function camel(){
     console.log(`snake_case: ${newword}`)
 }
 camel();
+
+// 47
+function depositCoins() {
+    const targetAmount = 50; 
+    let totalAmount = 0; 
+
+    console.log(`Amount Due: ${targetAmount}`);
+
+    while (totalAmount < targetAmount) {
+        let coin = parseInt(prompt('Insert Coin : '), 10);
+
+        if (coin === 25 || coin === 10 || coin === 5) {
+            totalAmount += coin;
+            let amountDue = targetAmount - totalAmount;
+            if (amountDue > 0) {
+                console.log(`Amount Due: ${amountDue}`);
+            } else {
+                console.log(`Change Owed: ${Math.abs(amountDue)}`);
+            }
+        } 
+    }
+}
+depositCoins();
+
+// 48
+function removeLetters(lettersToRemove) {
+    let input = prompt('Input: ');
+    // asoebis mosahoreblad regex
+    const pattern = new RegExp(`[${lettersToRemove}]`, 'gi');
+    return input.replace(pattern, '');
+}
+
+const lettersToRemove = 'aeiouAEIOU';
+const result = removeLetters(lettersToRemove);
+console.log(result); 
