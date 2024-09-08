@@ -18,3 +18,40 @@ function main(){
     }
 }
 main()
+
+// 43
+function passwordValidator() {
+    let password = prompt('Password: ')
+    // regex-ebi 
+    // test-it daabrunebs true-s an falses da magis mixedvit mere validaciebi
+    const lengthRequirement = password.length >= 8;
+    const containsLetters = /[a-zA-Z]/.test(password);
+    const containsNumbers = /\d/.test(password);
+    const containsSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < 8) {
+        if (containsNumbers) {
+            return "Very Weak";
+        }
+        if (containsLetters) {
+            return "Weak";
+        }
+        return "Very Weak";
+    }
+
+    if (containsLetters && containsNumbers && containsSpecialChars) {
+        return "Very Strong";
+    }
+    if (containsLetters && containsNumbers) {
+        return "Strong";
+    }
+    if (containsLetters) {
+        return "Weak";
+    }
+    if (containsNumbers) {
+        return "Very Weak";
+    }
+    return "Very Weak";
+}
+
+console.log(passwordValidator());
