@@ -101,3 +101,8 @@ async function sendRequest(url) {
 const url = 'https://api.github.com/users/temuritsutskiridze'; 
 sendRequest(url);
 
+// R E T R Y 
+// amaze cotas vifiqreb kidev
+
+// The locked Box
+// amasac davtoveb jerjerobit
