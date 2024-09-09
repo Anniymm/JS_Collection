@@ -92,8 +92,6 @@ function palindrome(string){
     }  
     return true;  
 }
-console.log(palindrome('amnna'))
-
-
+console.log(palindrome('amnna'));
 
 
