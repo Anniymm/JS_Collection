@@ -64,7 +64,55 @@ function inputs(){
 
 inputs();
     
+// 53
+function randomNumber(){
+    let level = Number(prompt('Let"s play Guess the Number. Pick a difficulty level (1, 2, or 3): '));
+    if(level === 1){
+        let num1 = Math.floor(Math.random() * 11) ; // es 10mde
+        return num1;
+    }else if(level === 2){
+        let num2 = Math.floor(Math.random() * 101) ; // es 100mde 
+        return num2
+    }else if(level === 3){
+        let num2 = Math.floor(Math.random() * 1001) ; // es 100mde 
+        return num2
+    }
+}
+
+function guessing(){
+    let random = randomNumber();
+    let guess;
+    let attempts = 0; 
     
+    do {
+        guess = Number(prompt("I have my number. What's your guess? "));
+        attempts++; 
+        if (guess > random) {
+            console.log("Too high. Try again.");
+        } else if (guess < random) {
+            console.log("Too low. Try again.");
+        } else if (guess === random) {
+            console.log(`Congratulations! You guessed the correct number in ${attempts} attempts.`);
+        } else {
+            console.log("Please enter a number.");
+        }
+
+    } while (guess !== random); 
+    
+}
+
+function main(){
+    let gues = guessing();
+    let again = prompt('Play again? ').toLowerCase();
+    if(again === 'no' || again === 'n'){
+        console.log('Goodbye')
+    }else{
+        gues;
+    }
+    
+}
+main()
+
 
 
 
