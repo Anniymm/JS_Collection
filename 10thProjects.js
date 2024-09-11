@@ -15,6 +15,23 @@ function vanity(){
 }
 vanity();
 
-
+// 50
+function isAlpha(str) {
+    return /^[A-Za-z]+$/.test(str);
+  }
+  
+  function Rate(){
+      let rate;
+      // let isalpha = isAlpha(rate);
+      do{
+          rate = prompt('What is the rate of return? ');
+          if (rate == 0 || isAlpha(rate) || Number(rate) <= 0) {
+        console.log("Sorry. That's not a valid input.");
+      }
+      }while(rate == 0 || isAlpha(rate) || Number(rate) <= 0);
+      let years = 72 / Number(rate) 
+      console.log(`It will take ${years.toFixed(1)} years to double your initial investment.`)
+  }
+  Rate();
 
 
