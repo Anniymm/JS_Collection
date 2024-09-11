@@ -114,6 +114,17 @@ function main(){
 main()
 
 
+// 54
+// "Yes", "No" ან "Ask again later".
+function asking(){
+    let question = prompt('what\'s your question: ');
+    let array = ["Yes", "No", "Ask again later"];
+    let randomIndex = Math.floor(Math.random() * array.length); // JER INDEXI SHEARCHIOS RANDOMAD
+    let randomElement = array[randomIndex]; // MERE AMOIGHOS ELEMENTI
+    console.log(randomElement)
+}
+asking()
+
 
 
 
