@@ -44,4 +44,28 @@ function isAlpha(str) {
 }
 nested();
 
+// 52
+function inputs(){
+    let pulse = Number(prompt('Resting Pulse: '));
+    let age = Number(prompt('Age: '));
+    let array = [];
+    for(let i = 55; i<=95; i+=5){
+        array.push(i)
+    }
+    
+    console.log('Intensity    | Target Heart Rate');
+    console.log('-------------|-------------------');
+
+  array.forEach(intensity => { // forEachit yvela elementze shesruldeba
+    let target = (((220 - age) - pulse) * (intensity / 100)) + pulse;
+    console.log(`${intensity}%       | ${Math.round(target)} bpm`);
+  });
+}
+
+inputs();
+    
+    
+
+
+
 
