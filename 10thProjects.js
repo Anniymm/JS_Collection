@@ -115,7 +115,7 @@ main()
 
 
 // 54
-// "Yes", "No" ან "Ask again later".
+// "Yes", "No" ან "Ask again later". oops, funqciebad dayofa gamomrcha :)))
 function asking(){
     let question = prompt('what\'s your question: ');
     let array = ["Yes", "No", "Ask again later"];
@@ -125,6 +125,32 @@ function asking(){
 }
 asking()
 
+// 55
 
+function names(){
+    let names;
+    let arr = [];
+    do{
+        names = prompt('Enter a name: ');
+        arr.push(names)
+    }
+    while(names !== '');
+    arr.pop(); // bolo space movashoro
+    // console.log(arr);
+    return arr;
+}
+
+function random(array){
+    let randomIndex = Math.floor(Math.random() * array.length); // JER INDEXI SHEARCHIOS RANDOMAD
+    let randomElement = array[randomIndex]; // MERE AMOIGHOS ELEMENTI
+    return randomElement;
+}
+
+function main(){
+    let namee = names();
+    let result =  random(namee);
+    console.log(result)
+}
+main()
 
 
