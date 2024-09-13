@@ -50,3 +50,37 @@ class Person {
   console.log(student1.show());    
   
   
+// 3
+class BankAccount {
+  #balance; // radgan #, amitom tan gamocxadebaao da tan privateio(class-shi asea)
+
+  constructor(balance = 0) {
+    this.#balance = balance;
+  }
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount; // anu balanss daamatos amounti
+      console.log(`deposit: ${amount}, new balance ${this.#balance}`);
+    } else {
+      console.log('not valid input');
+    }
+  }
+
+  withdraw(amount) {
+    if (amount > this.#balance) {
+      console.log('Not enough balance.');
+    } else if (amount > 0) {
+      this.#balance -= amount;
+      console.log(`Withdrawn: ${amount}. Balance: ${this.#balance}.`);
+    } else {
+      console.log('Withdrawalmust be positive.');
+    }
+  }
+
+  Balance() {
+    console.log(this.#balance);
+  }
+}
+
+  
