@@ -1,0 +1,46 @@
+// 57
+function lengthi(){
+    let length = Number(prompt('Whats the minimum length? '));
+    return length;
+}
+function numbers(){
+    let nums = Number(prompt('How many numbers? '));
+    const numarr = ['1','0','2','3','4','5','6','7','8','9'];
+    const shuffledArray = numarr.sort(() => 0.5 - Math.random());
+    const randomElements = shuffledArray.slice(0, nums);
+    return randomElements;
+}
+
+function characters(){
+    let char = Number(prompt('How many special character? '));
+    const special = ["!", "@", "#", "$", "%", "^", "&", "*"]
+    const shuffledArray2 = special.sort(() => 0.5 - Math.random());
+    const randomElements2 = shuffledArray2.slice(0, char);
+    return randomElements2;
+}
+function alpha(){
+    let Length = lengthi();
+    let specials = characters();
+    let numberss = numbers();
+    let specialLengths = specials.length;
+    let numberssLength = numberss.length;
+    let alphebi = Length - (specialLengths + numberssLength); //aq davabruno ramdeni aso unda iyooooos
+    if(alphebi < 0 ){
+        console.log('something went wrong!Choose relevant lengths!') 
+    }else{
+        
+        const alphebii = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
+"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        const shuffledArray3 = alphebii.sort(() => 0.5 - Math.random());
+        const randomElements3 = shuffledArray3.slice(0, alphebi);
+        const combinedArray = specials.concat(numberss, randomElements3);
+
+        const shuffledArraySum = combinedArray.sort(() => 0.5 - Math.random());
+    
+        console.log(`Your password is \n${shuffledArraySum.join('')}`);
+        
+    }
+    
+}
+
+alpha()
