@@ -42,5 +42,23 @@ function alpha(){
     }
     
 }
-
 alpha()
+
+// 58
+function items(){
+    const foodCalories = {
+      apple: 95,
+      banana: 105,
+      chicken_breast: 165,
+      potato: 163,
+      chocolate: 210
+    };
+    let inputi = prompt('Item: ').toLowerCase();
+    const keysArray = Object.keys(foodCalories);
+    if (keysArray.includes(inputi)){
+        console.log(`Calories: ${foodCalories[inputi]}`)
+    }else{
+        console.log('not in items')
+    }
+}
+items()
