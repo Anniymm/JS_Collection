@@ -62,3 +62,36 @@ function items(){
     }
 }
 items()
+
+// 59
+function manageEmployees() {
+    let employees = [
+      'John Smith',
+      'Jackie Jackson',
+      'Chris Jones',
+      'Amanda Cullen',
+      'Jeremy Goodwin'
+    ];
+  
+    
+    console.log('There are ' + employees.length + ' employees:');
+    employees.forEach(employee => console.log(employee));
+  
+    
+    let employeeToRemove = prompt('Enter an employee name to remove:');
+  
+    
+    const index = employees.indexOf(employeeToRemove); // indexis dabruneba
+    if (index >= 0) {
+      employees.splice(index, 1); //washla, indexidan marjvniv washalos 1 cali, anu eg erti magitom )))
+    } else {
+      console.log('Employee not found.');
+    }
+  
+    
+    console.log(`\nThere are ${employees.length} employees:`);
+    employees.forEach(employee => console.log(employee));
+  }
+  
+  manageEmployees();
+  
