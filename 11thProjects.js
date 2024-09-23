@@ -95,3 +95,9 @@ function manageEmployees() {
   
   manageEmployees();
   
+
+// 61
+const input = prompt("Enter a list of numbers, separated by spaces:");
+const numbers = input.split(" ").map(Number);
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log("The even numbers are: " + evenNumbers.join(" "));
