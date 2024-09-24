@@ -101,3 +101,35 @@ const input = prompt("Enter a list of numbers, separated by spaces:");
 const numbers = input.split(" ").map(Number);
 const evenNumbers = numbers.filter(num => num % 2 === 0);
 console.log("The even numbers are: " + evenNumbers.join(" "));
+
+// 62 mgoni
+function getBitcoinPrice(amount) {
+  const bitcoinAmount = parseFloat(amount);
+
+  if (isNaN(bitcoinAmount)) {
+      console.log("Invalid amount. Please enter a valid number.");
+      return;
+  }
+
+  fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Failed to fetch.");
+          }
+          return response.json();
+      })
+      .then(data => {
+          const bitcoinPrice = data.bpi.USD.rate_float;
+
+          const valueInUSD = bitcoinAmount * bitcoinPrice;
+
+          console.log(`value of ${bitcoinAmount} Bitcoin is $${valueInUSD.toFixed(4)} USD.`);
+      })
+      .catch(error => {
+          console.log("Error:", error.message);
+      });
+}
+
+const bitcoinAmount = prompt("Enter the amount of Bitcoins");
+getBitcoinPrice(bitcoinAmount);
+
